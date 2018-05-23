@@ -1,0 +1,9 @@
+Hair,Height,Weight,Lotion,Class
+blonde,average,light,no,positive
+blonde,tall,average,yes,negative
+brown,short,average,yes,negative
+blonde,short,average,no,positive
+red,average,heavy,no,positive
+brown,tall,heavy,no,negative
+brown,average,heavy,no,negative
+blonde,short,light,yes,negative

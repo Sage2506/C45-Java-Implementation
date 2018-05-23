@@ -1,0 +1,16 @@
+Age,Job,OwnsHouse,credit,class
+Young,false,false,fair,No
+Young,false,false,good,No
+Young,false,false,fair,No
+Middle,false,false,fair,No
+Middle,false,false,good,No
+Old,false,false,fair,No
+Young,true,false,good,Yes
+Young,true,true,fair,Yes
+Middle,true,true,good,Yes
+Middle,false,true,excellent,Yes
+Middle,false,true,excellent,Yes
+Old,false,true,excellent,Yes
+Old,false,true,good,Yes
+Old,true,false,good,Yes
+Old,true,false,excellent,Yes
