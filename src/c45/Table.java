@@ -8,21 +8,22 @@ public class Table {
 	Attribute[] atributos;
 	String root;
 	String name;
-	
+	// Construtor de un tabla a partir de una clase, n atributos, y un string para el nodo raiz 
 	public Table(Clases clase, Attribute[] atributos, String root) {
 		this.clase = clase;
 		this.atributos = atributos;
 		this.root = root;
 		this.name = "Raiz";
 	}
-	
+	// Construtor de un tabla a partir de una clase, n atributos, un string para el nodo raiz 
+	// y un string del valor dado 
 	public Table(Clases clase, Attribute[] atributos, String root, String name) {
 		this.clase = clase;
 		this.atributos = atributos;
 		this.root = root;
 		this.name = name;
 	}
-	
+	// Construtor de un tabla a partir de un dataset
 	public Table(List<List<String>> dataset) {
 		// Se crea la clase de la tabla
 		Clases newClase = new Clases(dataset.get(dataset.size()-1).get(0));
@@ -54,23 +55,23 @@ public class Table {
 		clase = newClase;
 		atributos = attributes;
 	}
-	
+	// Obtencion de la entropia global
 	public double globalEntrophy() {
 		return Methods.entrophy(clase.namesCount);
 	}
-	
+	// Nombre del atributo n de acuerdo a un numero
 	public String getAttributeName(Integer n) {
 		return atributos[n].getName();
 	}
-	
+	// Obtencion de la entropia de un atributo elegido
 	public double getAttributeEntrophy(Integer n) {
 		return atributos[n].getAttributeEntrophy();
 	}
-	
+	// Obtencion del numero de atributos de la tabla
 	public int getNumberOfAttributes() {
 		return atributos.length;
 	}
-	
+	// position de cierto atributo si es que existe
 	public int getAttributePosition(String atribute){
 		int n = atributos.length;
 		for(int i = 0 ; i < n ; i++){
@@ -78,10 +79,6 @@ public class Table {
 				return i;
 		}
 		return -1;
-	}
-	
-	public List<List<String>> getSubTable(int attribute, String value){
-		return new ArrayList<>();
 	}
 	
 	public void printTable(){
