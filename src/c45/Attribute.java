@@ -7,20 +7,20 @@ public class Attribute {
 	String name;
 	List<String> nameValues;
 	List<Integer> countValues;
-	List<Values> values;
+	List<Value> values;
 	
 	public Attribute (String name) {
 		this.name = name;
 		nameValues = new ArrayList<String>();
 		countValues = new ArrayList<Integer>();
-		values = new ArrayList<Values>();
+		values = new ArrayList<Value>();
 	}
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public void addValues (Values val) {
+	public void addValues (Value val) {
 		values.add(val);
 		Methods.addNamesAndCount(nameValues, countValues, val.name);
 	}
@@ -39,7 +39,7 @@ public class Attribute {
 			tempCount = 0;
 			nameOfValues.clear();
 			countOfValues.clear();
-			for(Values value : values) {
+			for(Value value : values) {
 				if(value.name().equals(val)) {
 					Methods.addNamesAndCount(nameOfValues, countOfValues, value.clase);
 					tempCount++;
@@ -59,7 +59,7 @@ public class Attribute {
 		return nameValues;
 	}
 	
-	public List<Values> getValues(){
+	public List<Value> getValues(){
 		return values;
 	}
 	

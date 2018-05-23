@@ -1,10 +1,10 @@
 package c45;
 
-public class Values {
+public class Value {
  String name;
  String clase;
  // constructor del Valor nombre y clase
- public Values(String name, String clase) {
+ public Value(String name, String clase) {
 	 this.name = name;
 	 this.clase = clase;
  }

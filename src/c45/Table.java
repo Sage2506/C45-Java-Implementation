@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Table {
-	Clases clase;
+	Classes clase;
 	Attribute[] atributos;
 	String root;
 	String name;
 	// Construtor de un tabla a partir de una clase, n atributos, y un string para el nodo raiz 
-	public Table(Clases clase, Attribute[] atributos, String root) {
+	public Table(Classes clase, Attribute[] atributos, String root) {
 		this.clase = clase;
 		this.atributos = atributos;
 		this.root = root;
@@ -17,7 +17,7 @@ public class Table {
 	}
 	// Construtor de un tabla a partir de una clase, n atributos, un string para el nodo raiz 
 	// y un string del valor dado 
-	public Table(Clases clase, Attribute[] atributos, String root, String name) {
+	public Table(Classes clase, Attribute[] atributos, String root, String name) {
 		this.clase = clase;
 		this.atributos = atributos;
 		this.root = root;
@@ -26,7 +26,7 @@ public class Table {
 	// Construtor de un tabla a partir de un dataset
 	public Table(List<List<String>> dataset) {
 		// Se crea la clase de la tabla
-		Clases newClase = new Clases(dataset.get(dataset.size()-1).get(0));
+		Classes newClase = new Classes(dataset.get(dataset.size()-1).get(0));
 		List<String> claseValues = new ArrayList<String>();
 		for(int i = 1; i < dataset.get(dataset.size()-1).size(); i++) {
 			claseValues.add(dataset.get(dataset.size()-1).get(i));
@@ -45,7 +45,7 @@ public class Table {
 				}
 				else
 				{
-					attributes[i].addValues(new Values(dataset.get(i).get(j),
+					attributes[i].addValues(new Value(dataset.get(i).get(j),
 																dataset.get(dataset.size()-1).get(j)));
 				}
 			}
@@ -88,7 +88,7 @@ public class Table {
 			System.out.printf("%-12s",a.name);
 		System.out.printf("%-12s\n",clase.name);
 		int n = atributos.length;
-		List<List<Values>> valores = new ArrayList<>();
+		List<List<Value>> valores = new ArrayList<>();
 		for(int i  = 0 ; i < n ; i++)
 			valores.add(atributos[i].getValues()); 
 		n++;
@@ -109,7 +109,7 @@ public class Table {
 	public List<Table> subTableValue(String attributeName){
 		List<Table> tablas = new ArrayList<Table>();
 		List<Attribute> newAttribs = new ArrayList<Attribute>();
-		Clases newClase = new Clases(clase.name);
+		Classes newClase = new Classes(clase.name);
 		int position = getAttributePosition(attributeName);
 		List<String> valNames = atributos[position].getValuesNames();
 		List<List<Integer>> positions = new ArrayList<List<Integer>>();

@@ -3,14 +3,14 @@ package c45;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clases {
+public class Classes {
 	String name;
 	String root;
 	List<String> names;
 	List<Integer> namesCount;
 	List<String> values;
 
-	public Clases(String name) {
+	public Classes(String name) {
 		names = new ArrayList<String>();
 		namesCount = new ArrayList<Integer>();
 		this.name = name;
@@ -51,8 +51,8 @@ public class Clases {
 		return values.size();
 	}
 
-	public Clases getSubClase(List<Integer> positions){
-		Clases newClass = new Clases(this.name);
+	public Classes getSubClase(List<Integer> positions){
+		Classes newClass = new Classes(this.name);
 		List<String> newValues = new ArrayList<String>();
 		for(Integer position : positions)
 			newValues.add(values.get(position));

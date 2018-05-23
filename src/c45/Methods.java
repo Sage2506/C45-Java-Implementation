@@ -40,11 +40,11 @@ public class Methods {
 		}
 	}
 
-	public static List<Values> createValues(List<String> Clases, List<String> Attributes){
-		List<Values> resultado = new ArrayList<Values>();
+	public static List<Value> createValues(List<String> Clases, List<String> Attributes){
+		List<Value> resultado = new ArrayList<Value>();
 		int n = Clases.size();
 		for(int i = 1; i < n; i++) 
-			resultado.add(new Values(Attributes.get(i),Clases.get(i)));
+			resultado.add(new Value(Attributes.get(i),Clases.get(i)));
 		return resultado;
 	}
 	
